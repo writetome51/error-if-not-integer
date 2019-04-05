@@ -1,19 +1,20 @@
 {
-  "name": "@writetome51/is-object-not-object",
+  "name": "error-if-not-integer",
   "version": "1.0.0",
-  "description": "2 functions that check if passed argument is or is not an object.  Null is not considered an object",
+  "description": "Function triggers error if argument is not integer of type 'number'",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/writetome51/is-object-not-object.git"
+    "url": "git+https://github.com/writetome51/error-if-not-integer.git"
   },
   "keywords": [
-    "is",
+    "error",
+    "message",
     "not",
-    "object",
+   "integer",
     "type-checking",
     "type",
     "check",
@@ -22,9 +23,10 @@
   "author": "Steve Thompson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/writetome51/is-object-not-object/issues"
+    "url": "https://github.com/writetome51/error-if-not-integer/issues"
   },
-  "homepage": "https://github.com/writetome51/is-object-not-object#readme",
+  "homepage": "https://github.com/writetome51/error-if-not-integer#readme",
   "dependencies": {
+    "error-if-not-finite-number": "~1.0.0"
   }
 }

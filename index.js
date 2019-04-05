@@ -1,18 +1,11 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+Object.defineProperty(exports, "__esModule", { value: true });
+var notInteger = require("@writetome51/is-integer-is-float").notInteger;
+var errorIfNotFiniteNumber = require("error-if-not-finite-number").errorIfNotFiniteNumber;
 
 
-// Returns true if arg is object, and does not consider null an object.
-
-function isObject(arg) {
-	return !(arg === null || typeof arg !== 'object');
+function errorIfNotInteger(arg) {
+	errorIfNotFiniteNumber(arg);
+	if (notInteger(arg))  throw new Error('Input must be integer');
 }
-exports.isObject = isObject;
-
-
-// Will return true if arg is null.
-
-function notObject(arg) {
-	return !(isObject(arg));
-}
-exports.notObject = notObject;
+exports.errorIfNotInteger = errorIfNotInteger;
