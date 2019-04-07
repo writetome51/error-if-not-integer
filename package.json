@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/writetome51/error-if-not-integer#readme",
   "dependencies": {
-    "error-if-not-finite-number": "~1.0.0"
+    "error-if-not-finite-number": "~1.0.0",
+    "@writetome51/is-integer-is-float": "~1.0.0"
   }
 }

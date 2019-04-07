@@ -1,69 +1,49 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", {value: true});
-var isObject_notObject_1 = require("./index");
+var errorIfNotInteger = require("./index").errorIfNotInteger;
 
 
-if (isObject_notObject_1.isObject([]))
-	console.log('test 1 passed');
-else
-	console.log('test 1 FAILED');
+errorIfNotInteger(Number.MAX_VALUE); // no error.
+errorIfNotInteger(1);
+errorIfNotInteger(Number.MIN_SAFE_INTEGER);
+console.log('test 1 passed');
 
 
-if (isObject_notObject_1.isObject({}))
-	console.log('test 2 passed');
-else
-	console.log('test 2 FAILED');
+let errorTriggered = false;
+try {
+	errorIfNotInteger('1');
+} catch (e) {
+	errorTriggered = true;
+}
+if (errorTriggered) console.log('test 2 passed');
+else console.log('test 2 FAILED');
 
 
-if (isObject_notObject_1.notObject(null))
-	console.log('test 3 passed');
-else
-	console.log('test 3 FAILED');
+errorTriggered = false;
+try {
+	errorIfNotInteger(1.0000000001);
+} catch (e) {
+	errorTriggered = true;
+}
+if (errorTriggered) console.log('test 3 passed');
+else console.log('test 3 FAILED');
 
 
-if (isObject_notObject_1.notObject('asdf'))
-	console.log('test 4 passed');
-else
-	console.log('test 4 FAILED');
+errorTriggered = false;
+try {
+	errorIfNotInteger('');
+} catch (e) {
+	errorTriggered = true;
+}
+if (errorTriggered) console.log('test 4 passed');
+else console.log('test 4 FAILED');
 
 
-if (isObject_notObject_1.notObject(10))
-	console.log('test 5 passed');
-else
-	console.log('test 5 FAILED');
-
-
-if (isObject_notObject_1.notObject(true))
-	console.log('test 6 passed');
-else
-	console.log('test 6 FAILED');
-
-
-if (isObject_notObject_1.notObject(undefined))
-	console.log('test 7 passed');
-else
-	console.log('test 7 FAILED');
-
-
-// Even if string is created using String() conversion function, it's
-// not considered an object:
-var str = String('boo');
-if (isObject_notObject_1.notObject(str))
-	console.log('test 8 passed');
-else
-	console.log('test 8 FAILED');
-
-
-if (isObject_notObject_1.notObject(function() {
-	return '';
-}))
-	console.log('test 9 passed');
-else
-	console.log('test 9 FAILED');
-
-
-var sym = Symbol('r');
-if (isObject_notObject_1.notObject(sym))
-	console.log('test 10 passed');
-else
-	console.log('test 10 FAILED');
+errorTriggered = false;
+try {
+	errorIfNotInteger([]);
+} catch (e) {
+	errorTriggered = true;
+}
+if (errorTriggered) console.log('test 5 passed');
+else console.log('test 5 FAILED');
