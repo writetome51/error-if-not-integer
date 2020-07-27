@@ -1,7 +1,8 @@
 {
   "name": "error-if-not-integer",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Function triggers error if argument is not integer of type 'number'",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,7 +28,7 @@
   },
   "homepage": "https://github.com/writetome51/error-if-not-integer#readme",
   "dependencies": {
-    "error-if-not-finite-number": "~1.0.0",
-    "@writetome51/is-integer-is-float": "~1.0.0"
+    "error-if-not-finite-number": "^2.0.0",
+    "@writetome51/is-integer-is-float": "^2.0.0"
   }
 }

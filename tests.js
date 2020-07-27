@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
-var errorIfNotInteger = require("./index").errorIfNotInteger;
+import {errorIfNotInteger} from './index.js';
 
 
 errorIfNotInteger(Number.MAX_VALUE); // no error.

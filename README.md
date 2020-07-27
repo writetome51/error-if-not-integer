@@ -6,9 +6,6 @@ Triggers error if `arg` is not integer of type 'number' .
 `npm i  error-if-not-integer`
 
 ## Loading
-```
-// if using TypeScript:
+```js
 import { errorIfNotInteger } from 'error-if-not-integer';
-// if using ES5 JavaScript:
-var errorIfNotInteger = require('error-if-not-integer').errorIfNotInteger;
 ```
