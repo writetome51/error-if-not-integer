@@ -19,12 +19,32 @@ else console.log('test 2 FAILED');
 
 errorTriggered = false;
 try {
-	errorIfNotInteger(1.0000000001);
+	errorIfNotInteger(true);
+} catch (e) {
+	errorTriggered = true;
+}
+if (errorTriggered) console.log('test 2A passed');
+else console.log('test 2A FAILED');
+
+
+errorTriggered = false;
+try {
+	errorIfNotInteger(0.00000001);
 } catch (e) {
 	errorTriggered = true;
 }
 if (errorTriggered) console.log('test 3 passed');
 else console.log('test 3 FAILED');
+
+
+errorTriggered = false;
+try {
+	errorIfNotInteger(1.000000000000001);
+} catch (e) {
+	errorTriggered = true;
+}
+if (errorTriggered) console.log('test 3A passed');
+else console.log('test 3A FAILED');
 
 
 errorTriggered = false;
